@@ -9,7 +9,6 @@ import { GitLabSignIn } from "@/components/gitlab_sign_in";
 import { GoogleSignIn } from "@/components/google_sign_in";
 import { actionExecutor } from "@/libs/actionExecutor";
 
-
 const Page = async () => {
     const session = await auth();
     //jika session ada atau user telah terautentifikasi maka redirect ke halaman /
@@ -41,8 +40,8 @@ const Page = async () => {
             action={async (formData) => {
                 "use server";
                 await actionExecutor({
-                actionFn: async () => {
-                    await signIn("credentials", formData);
+                    actionFn: async () => {
+                        await signIn("credentials", formData);
                 },
                 });
             }}
@@ -68,7 +67,7 @@ const Page = async () => {
 
             <div className="text-center">
             <Button asChild variant="link">
-                <Link href="/sign-up">Don&apos;t have an account? Sign up</Link>
+                <Link href="/signup">Don&apos;t have an account? Sign up</Link>
             </Button>
             </div>
         </div>
